@@ -127,8 +127,8 @@ let
 
       extraInstallCommands = ''
         install -Dm 644 ${appimageContents}/beepertexts.png $out/share/icons/hicolor/512x512/apps/beepertexts.png
-        install -Dm 644 ${appimageContents}/beepertexts.desktop -t $out/share/applications/
-        substituteInPlace $out/share/applications/beepertexts.desktop --replace-fail "AppRun" "beeper"
+        install -Dm 644 ${appimageContents}/beepertexts.desktop $out/share/applications/Beeper.desktop
+        substituteInPlace $out/share/applications/Beeper.desktop --replace-fail "AppRun" "beeper"
 
         . ${makeWrapper}/nix-support/setup-hook
         wrapProgram $out/bin/beeper \
